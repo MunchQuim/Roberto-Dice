@@ -54,6 +54,7 @@ document.getElementById("centralBtn").addEventListener("click", async function (
         empiezaPartida = true;
         document.getElementById("centralBtn").style.backgroundColor = "green";
         await esperar(1000);
+        Tone.Transport.stop();
         partida();
     }
 
@@ -182,6 +183,7 @@ async function derrota() {
 
 }
 function reinicio() {
+    
     esDerrota = false;
     document.getElementById("centralBtn").style.backgroundColor = "silver";
     cara = true;
@@ -218,6 +220,7 @@ async function arpegio() {
         await esperar(500);
         apagar(num);
     }*/
+    console.log("arpegio");
     const syntho = new Tone.Synth().toDestination();
     const notaso = ['Eb3', 'Ab3', 'Db4', 'F4'];
 
