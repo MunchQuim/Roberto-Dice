@@ -212,35 +212,29 @@ async function idle(posicion) {
     }
 
 }
+// creando arpegio //
+const syntho = new Tone.Synth().toDestination();
+const notaso = ['Eb3', 'Ab3', 'Db4', 'F4'];
+const arpegios = new Tone.Pattern((time, nota) => {
+    // Reproduce la nota en el tiempo especificado
+    syntho.triggerAttackRelease(nota, '8n', time);
+}, notaso);
+arpegios.start(0);
+arpegios.interval = '8n';
+arpegios.iterations = notaso.length;
+///////////////////////////////////////
 async function arpegio() {
-    /*for (let num = 0; num < SONIDOS.length; num++) {
-        let boton = document.getElementById("boton" + num + "");
-        playNote(num);
-        boton.style.opacity = MAXOPACITY;
-        await esperar(500);
-        apagar(num);
-    }*/
     console.log("arpegio");
-    const syntho = new Tone.Synth().toDestination();
-    const notaso = ['Eb3', 'Ab3', 'Db4', 'F4'];
-
-    const arpegio = new Tone.Pattern((time, nota) => {
-        // Reproduce la nota en el tiempo especificado
-        syntho.triggerAttackRelease(nota, '8n', time);
-    }, notaso);
-    arpegio.start(0);
-    arpegio.interval = '8n';
-    arpegio.iterations = notaso.length;
     Tone.Transport.start();
 }
-async function arpegioMal() {
-    /*for (let num = 0; num < SONIDOS.length; num++) {
+/* async function arpegioMal() {
+    for (let num = 0; num < SONIDOS.length; num++) {
         let boton = document.getElementById("boton" + num + "");
         playNote(num);
         boton.style.opacity = MAXOPACITY;
         await esperar(500);
         apagar(num);
-    }*/
+    }
     const syntho = new Tone.Synth().toDestination();
     const notaso = ['F4', 'Db4', 'Ab3', 'Eb3'];
 
@@ -251,5 +245,5 @@ async function arpegioMal() {
     arpegio.start(0);
     arpegio.interval = '8n';
     arpegio.iterations = notaso.length;
-    Tone.Transport.start();
-}
+    arpegio.Transport.start();
+} */
