@@ -1,0 +1,71 @@
+body{
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.limite{
+    
+    height: 40rem;
+    width: 40rem;
+}
+.grid{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#boton0{
+    grid-area: 1/1/2/2;
+    background-color: rgba(253, 216, 6, 1);
+    border-top-left-radius: 100%;
+    opacity: 0.6;
+}
+#boton1{
+    grid-area: 1/2/2/3;
+    background-color: rgba(17, 167, 248, 1);
+    border-top-right-radius: 100%;
+    opacity: 0.6;
+}
+#boton2{
+    grid-area: 2/1/3/2;
+    background-color: rgba(255, 7, 23, 1);
+    border-bottom-left-radius: 100%;
+    opacity: 0.6;
+}
+#boton3{
+    grid-area: 2/2/3/3;
+    background-color: rgba(1, 212, 89, 1);
+    border-bottom-right-radius: 100%;
+    opacity: 0.6;
+}
+.botones{
+    border: solid 1rem black;
+    cursor: pointer;
+}
+#centralBtn{
+    border-radius: 100%;
+    position: absolute;
+    margin: auto;
+    width: 15rem;
+    height: 15rem;
+    background-color: silver;
+    border: solid 1rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cara{
+    opacity: 0.8;
+    height: 14%;
+    width: 80%;
+}
+#iluminacion{
+    position: absolute;
+    margin: auto;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+}
